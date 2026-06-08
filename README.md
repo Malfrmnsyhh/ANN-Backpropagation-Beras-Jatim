@@ -40,7 +40,7 @@ Model dievaluasi menggunakan metrik Regresi:
 - **MAE**: Mean Absolute Error
 
 ## ✍️ Penulis
-- **Nama Anda** - *Inisiator & Programmer*
+- **Nama Anda** - *Muhammad Akmal Firmansyah*
 - Kelompok 4 - Kelas Paralel B
 
 ---
