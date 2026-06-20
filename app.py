@@ -53,9 +53,9 @@ try:
         st.markdown("""
         **Arsitektur Model:**
         - **Input:** 2 Fitur (Lag-1, Lag-2)
-        - **Hidden Layers:** 2 Lapis (8, 4 Neuron)
+        - **Hidden Layers:** 2 Lapis (12, 8 Neuron)
         - **Optimizer:** Adam
-        - **Activation:** Tanh
+        - **Activation:** ReLU
         """)
         
         st.subheader("Analisis Loss Curve")
@@ -78,11 +78,13 @@ try:
         pred = df_results['prediction']
         mae = np.mean(np.abs(actual - pred))
         rmse = np.sqrt(np.mean((actual - pred)**2))
+        mape = np.mean(np.abs((actual - pred) / actual)) * 100
         
-        col1, col2, col3 = st.columns(3)
-        col1.metric("MAE (Mean Absolute Error)", f"Rp {mae:.2f}")
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("MAE", f"Rp {mae:.2f}")
         col2.metric("RMSE", f"Rp {rmse:.2f}")
-        col3.metric("Total Data Uji", f"{len(df_results)} Bulan")
+        col3.metric("MAPE", f"{mape:.2f}%")
+        col4.metric("Total Data Uji", f"{len(df_results)} Bulan")
 
         st.divider()
 
