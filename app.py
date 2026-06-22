@@ -39,7 +39,7 @@ Selamat datang di **Sistem Cerdas Prediksi Harga Pangan**. Dashboard ini menampi
 
 # Sidebar untuk navigasi
 with st.sidebar:
-    st.image("https://cdn-icons-png.flaticon.com/512/3063/3063822.png", width=100) # Ilustrasi beras/pangan
+    # st.image("https://cdn-icons-png.flaticon.com/512/3063/3063822.png", width=100) # Ilustrasi beras/pangan
     st.header("Navigasi Utama")
     menu = st.radio("Pilih Tampilan:", ["Dataset & Tren", "Proses Training", "Evaluasi Model"])
     st.markdown("---")
