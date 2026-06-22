@@ -12,11 +12,11 @@ st.markdown("""
 <style>
     /* Styling untuk Metric Cards */
     div[data-testid="stMetric"] {
-        background-color: #ffffff;
-        border: 1px solid #f0f2f6;
+        background-color: var(--secondary-background-color);
+        border: 1px solid var(--background-color);
         padding: 15px 20px;
         border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         border-left: 5px solid #2e7bcf;
     }
     
