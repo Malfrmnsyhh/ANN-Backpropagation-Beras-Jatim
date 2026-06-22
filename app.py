@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Konfigurasi Halaman
-st.set_page_config(page_title="Dashboard Prediksi Harga Beras Jatim", page_icon="🌾", layout="wide")
+st.set_page_config(page_title="Dashboard Final Project AI", layout="wide")
 
 # Custom CSS untuk mempercantik UI
 st.markdown("""
@@ -43,7 +43,7 @@ with st.sidebar:
     st.header("Navigasi Utama")
     menu = st.radio("Pilih Tampilan:", ["Dataset & Tren", "Proses Training", "Evaluasi Model"])
     st.markdown("---")
-    st.write("✨ **Dibuat untuk Final Project AI 2026**")
+    # st.write("✨ **Dibuat untuk Final Project AI 2026**")
 
 # Load Data
 @st.cache_data
