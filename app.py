@@ -38,7 +38,7 @@ st.markdown("""
 
 st.title("Dashboard Prediksi Harga Beras Medium - Jawa Timur")
 st.markdown("""
-**Sistem Cerdas Prediksi Harga Pangan Menggunakan Jaringan Saraf Tiruan (JST) Backpropagation**
+**Prediksi Harga Pangan Menggunakan Jaringan Saraf Tiruan (JST) Backpropagation**
 """)
 
 # Sidebar untuk navigasi
