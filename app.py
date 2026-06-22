@@ -36,7 +36,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🌾 Dashboard Prediksi Harga Beras Medium - Jawa Timur")
+st.title("Dashboard Prediksi Harga Beras Medium - Jawa Timur")
 st.markdown("""
 **Sistem Cerdas Prediksi Harga Pangan Menggunakan Jaringan Saraf Tiruan (JST) Backpropagation**
 """)
@@ -88,7 +88,7 @@ if df_monthly is None or df_results is None:
     st.error("⚠️ File data tidak ditemukan. Pastikan Anda sudah menjalankan seluruh proses preprocessing & training.")
 else:
     if menu == "1. Overview & Dataset":
-        st.header("📖 Overview Penelitian")
+        st.header("Overview Penelitian")
         st.markdown("""
         Penelitian ini bertujuan memprediksi fluktuasi harga beras medium di tingkat kabupaten/kota se-Jawa Timur 
         menggunakan data historis *time series*. Algoritma JST Backpropagation digunakan sebagai "otak" untuk mengenali pola kenaikan atau penurunan harga.
@@ -103,7 +103,7 @@ else:
         
         st.divider()
         
-        st.header("📈 Visualisasi Tren Harga Beras")
+        st.header("Visualisasi Tren Harga Beras")
         st.write("Grafik pergerakan rata-rata harga beras medium di Jawa Timur.")
         
         # Interaktif Line Chart
@@ -114,10 +114,10 @@ else:
         max_idx = df_monthly['jumlah'].idxmax()
         max_price = df_monthly.loc[max_idx, 'jumlah']
         max_date = df_monthly.loc[max_idx, 'periode_update'].strftime('%B %Y')
-        st.info(f"💡 **Insight:** Berdasarkan data di atas, harga beras mencapai titik tertingginya sebesar **Rp {max_price:,.0f}** pada **{max_date}**.")
+        st.info(f"**Insight:** Berdasarkan data di atas, harga beras mencapai titik tertingginya sebesar **Rp {max_price:,.0f}** pada **{max_date}**.")
 
     elif menu == "2. Preprocessing Data":
-        st.header("⚙️ Pra-Pemrosesan Data (Preprocessing)")
+        st.header("Pra-Pemrosesan Data (Preprocessing)")
         st.markdown("""
         Sebelum dimasukkan ke dalam model JST, data harga mentah diagregasi secara bulanan dan diubah menjadi format *supervised learning* menggunakan teknik **Sliding Window**.
         Lalu, data dinormalisasi menggunakan **Min-Max Scaling** agar nilainya berada di rentang 0 hingga 1. Hal ini wajib dilakukan agar fungsi aktivasi JST tidak mengalami saturasi.
@@ -137,10 +137,10 @@ else:
             else:
                 st.warning("Data beras_scaled.csv tidak ditemukan.")
                 
-        st.success("✔ Data yang terskalakan inilah yang digunakan untuk melatih Jaringan Saraf Tiruan.")
+        st.success("Data yang terskalakan inilah yang digunakan untuk melatih Jaringan Saraf Tiruan.")
 
     elif menu == "3. Arsitektur & Training JST":
-        st.header("🧠 Arsitektur & Pelatihan Jaringan Saraf Tiruan")
+        st.header("Arsitektur & Pelatihan Jaringan Saraf Tiruan")
         
         col_arch, col_train = st.columns([1, 1.5])
         
@@ -173,7 +173,7 @@ else:
                 st.warning("Data Loss Curve belum ditemukan.")
 
     elif menu == "4. Evaluasi Kinerja":
-        st.header("📊 Evaluasi Kinerja & Akurasi Prediksi")
+        st.header("Evaluasi Kinerja & Akurasi Prediksi")
         
         actual = df_results['actual']
         pred = df_results['prediction']
@@ -192,7 +192,7 @@ else:
         col4.metric("MAPE", f"{mape:.2f}%")
         
         if mape < 10:
-            st.success("🌟 **Insight:** Nilai MAPE berada di bawah 10% sehingga model tergolong **Sangat Akurat** untuk peramalan harga beras.")
+            st.success("**Insight:** Nilai MAPE berada di bawah 10% sehingga model tergolong **Sangat Akurat** untuk peramalan harga beras.")
         
         st.divider()
 
@@ -229,7 +229,7 @@ else:
             st.caption("Distribusi error yang berpusat di sekitar angka 0 menunjukkan model tidak memiliki bias prediksi yang parah.")
 
     elif menu == "5. Prediksi Interaktif":
-        st.header("🔮 Simulasi Prediksi Harga Beras")
+        st.header("Simulasi Prediksi Harga Beras")
         st.markdown("Masukkan rata-rata harga beras Jawa Timur pada dua bulan terakhir untuk memprediksi harga bulan depan.")
         
         if model is None or scaler is None:
@@ -242,7 +242,7 @@ else:
                 with col2:
                     lag_2 = st.number_input("Harga 2 Bulan Lalu (Lag-2) - Rp", min_value=5000.0, max_value=30000.0, value=12000.0, step=100.0)
                 
-                submit_button = st.form_submit_button(label="🚀 Prediksi Harga")
+                submit_button = st.form_submit_button(label="Prediksi Harga")
                 
             if submit_button:
                 # Format fitur untuk scaler: [jumlah_dummy, lag_1, lag_2]
