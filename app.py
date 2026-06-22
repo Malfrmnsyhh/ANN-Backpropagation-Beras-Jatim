@@ -119,11 +119,11 @@ else:
         st.header("Pra-Pemrosesan Data (Preprocessing)")
         st.markdown("""
         Sebelum dimasukkan ke dalam model JST, data harga mentah diagregasi secara bulanan dan diubah menjadi format *supervised learning* menggunakan teknik **Sliding Window**.
-        Lalu, data dinormalisasi menggunakan **Min-Max Scaling** agar nilainya berada di rentang 0 hingga 1. Hal ini wajib dilakukan agar fungsi aktivasi JST tidak mengalami saturasi.
+        Lalu, data dinormalisasi menggunakan **Min-Max Scaling** agar nilainya berada di rentang 0 hingga 1 agar fungsi aktivasi JST tidak mengalami saturasi.
         """)
         
         st.subheader("1. Sliding Window (Feature Engineering)")
-        st.write("Kita menggunakan 2 bulan sebelumnya (Lag-1 dan Lag-2) untuk memprediksi harga bulan ini (Target).")
+        st.write("2 bulan sebelumnya (Lag-1 dan Lag-2) digunakan untuk memprediksi harga bulan ini (Target).")
         
         col1, col2 = st.columns(2)
         with col1:
@@ -136,7 +136,7 @@ else:
             else:
                 st.warning("Data beras_scaled.csv tidak ditemukan.")
                 
-        st.success("Data yang terskalakan inilah yang digunakan untuk melatih Jaringan Saraf Tiruan.")
+        st.success("Data terskala digunakan untuk melatih JST.")
 
     elif menu == "3. Arsitektur & Training JST":
         st.header("Arsitektur & Pelatihan Jaringan Saraf Tiruan")
