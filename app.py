@@ -52,7 +52,6 @@ with st.sidebar:
         "5. Prediksi Interaktif"
     ])
     st.markdown("---")
-    st.markdown("🎓 **Final Project AI 2026**")
 
 # Load Data & Models
 @st.cache_data
